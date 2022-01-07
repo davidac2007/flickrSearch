@@ -17,4 +17,14 @@ final class FlickrPhotosViewController: UICollectionViewController{
         bottom: 50.0,
         right: 20.0
     )
+    
+    
+    private var searches: [FlickrSearchResults] = []
+    private let flickr =  Flickr()
+}
+
+private extension FlickrPhotosViewController{
+    func photo(for indexPath: IndexPath) -> FlickrPhoto {
+        return searches[indexPath.section].searchResults[indexPath.row]
+    }
 }
